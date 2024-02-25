@@ -9,7 +9,7 @@ export class Person {
   name: string;
 
   @Column()
-  age: string;
+  age: number;
 
   @Column()
   sex: string;
