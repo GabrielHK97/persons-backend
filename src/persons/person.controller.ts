@@ -7,7 +7,6 @@ export class PersonController {
   constructor(private readonly personService: PersonService) {}
   @Post()
   findAll(@Req() req: Request,) {
-    console.log(req.query);
     return this.personService.findAll(req.query);
   }
 }

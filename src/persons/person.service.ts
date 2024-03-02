@@ -11,9 +11,10 @@ export class PersonService {
   ) {}
 
   async findAll(query: any): Promise<any> {
-    return this.personRepository.find({
+    const [persons, totalItems] = await this.personRepository.findAndCount({
       skip: query.skip,
       take: query.take,
     });
+    return { persons, totalItems };
   }
 }
